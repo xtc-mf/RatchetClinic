@@ -25,5 +25,7 @@ from Ratchet.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Ratchet.views.index, name='index'),
-    path('feedback/', Ratchet.views.feedback, name='feedback')
+    path('feedback/', Ratchet.views.feedback, name='feedback'),
+    path('review/', Ratchet.views.review, name='review'),
+    path('doctors/', Ratchet.views.doctors, name='doctors')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
