@@ -1,19 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Employees
-from .forms import Feedback_Form
+from .models import Employees, Review, calculate_average_rate
+from .forms import Feedback_Form, Rewiew_Form
 
 def index(request):
     model = Employees
-    employees = Employees.objects.all()#[:3]
+    employees = Employees.objects.all()[:3]
     context = {'employees': employees}
     template_name = 'index.html'
     return render(request, template_name, context)
-
-
-from django.shortcuts import render
-from django.contrib import messages
-from .forms import Feedback_Form
 
 def feedback(request):
     if request.method == "POST":
@@ -26,3 +21,24 @@ def feedback(request):
     return render(request, 'feedback.html', {'form': Feedback_Form})
 
 
+def review(request):
+    review_model = Review.objects.all()
+    average_rating = round(calculate_average_rate(), 1)
+    if request.method == "POST":
+        form = Rewiew_Form(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Новый отзыв')
+            return redirect('index')  # Перенаправление на страницу обратной связи после успешного сохранения формы
+        else:
+            messages.error(request, 'Ошибка оставления')
+    else:
+        form = Rewiew_Form()
+    return render(request, 'review.html', {'form': form, 'review_model': review_model, 'average_rating': average_rating})
+
+def doctors(request):
+    model = Employees
+    employees = Employees.objects.all()
+    context = {'employees': employees}
+    template_name = 'doctors.html'
+    return render(request, template_name, context)
