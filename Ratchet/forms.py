@@ -10,3 +10,16 @@ class Feedback_Form(ModelForm):
         model = Feedback
         fields = ['feedback_name', 'feedback_phone']
         labels = {'feedback_name': 'Ваше имя', 'feedback_phone': 'Ваш телефон'}
+
+
+class Rewiew_Form(ModelForm):
+    review_name = forms.CharField(label='Ваше имя', max_length=200, initial='Гость', help_text='Введите ваше имя')
+    reviwe_rate = forms.IntegerField(label='Ваша оценка', validators=[
+        MinValueValidator(1),
+        MaxValueValidator(5)
+    ], help_text='Введите оценку от 1 до 5')
+    reviwe_text = forms.CharField(label='Ваш отзыв', widget=forms.Textarea, help_text='Введите ваш отзыв')
+    class Meta:
+        model = Review
+        fields = ['review_name', 'reviwe_rate', 'reviwe_text']
+        labels = {'review_name': 'Ваше имя', 'reviwe_rate': 'Ваша оценка', 'reviwe_text': 'Ваш отзыв'}
