@@ -21,13 +21,14 @@
         <li><a href="{% url 'index' %}">Главная</a></li>
         <li><a href="{% url 'doctors' %}">Доктора</a></li>
         <li><a href="{% url 'review' %}">Отзывы</a></li>
+        <li><a href="{% url 'services' %}">Услуги</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section class="section-feedback" style="margin-top: 150px;">
-      <h2 style="text-align: center">Обратная связь</h2>
+      <h1 style="text-align: center">Обратная связь</h1>
             <div class="div-feedback">
                 <form action="{% url 'index' %}" method="POST">
                 {% csrf_token %}
@@ -41,12 +42,13 @@
     </section>
   </main>
 
-  <footer>
+  <footer style="margin-top: 150px">
     <div class="footer-links">
       <ul>
         <li><a href="{% url 'index' %}">Главная</a></li>
         <li><a href="{% url 'doctors' %}">Доктора</a></li>
         <li><a href="{% url 'review' %}">Отзывы</a></li>
+        <li><a href="{% url 'services' %}">Услуги</a></li>
       </ul>
     </div>
     <div class="footer-contacts">
