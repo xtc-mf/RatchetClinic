@@ -18,8 +18,9 @@
     <nav>
       <ul>
         <li><a href="{% url 'index' %}">Главная</a></li>
-        <li><a href="doctors.html">Доктора</a></li>
-        <li><a href="feedback.html">Контакты</a></li>
+        <li><a href="{% url 'doctors' %}">Доктора</a></li>
+        <li><a href="{% url 'feedback' %}">Обратная связь</a></li>
+        <li><a href="{% url 'services' %}">Услуги</a></li>
       </ul>
     </nav>
   </header>
@@ -59,8 +60,9 @@
     <div class="footer-links">
       <ul>
         <li><a href="{% url 'index' %}">Главная</a></li>
-        <li><a href="doctors.html">Доктора</a></li>
+        <li><a href="{% url 'doctors' %}">Доктора</a></li>
         <li><a href="{% url 'feedback' %}">Обратная связь</a></li>
+        <li><a href="{% url 'services' %}">Услуги</a></li>
       </ul>
     </div>
     <div class="footer-contacts">
