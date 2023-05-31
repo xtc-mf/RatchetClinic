@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Employees, Review, calculate_average_rate
-from .forms import Feedback_Form, Rewiew_Form
+from .models import Employees, Review, calculate_average_rate, Service
+from .forms import Feedback_Form, Rewiew_Form, Client_Form
 
 def index(request):
     model = Employees
@@ -41,4 +41,13 @@ def doctors(request):
     employees = Employees.objects.all()
     context = {'employees': employees}
     template_name = 'doctors.html'
+    return render(request, template_name, context)
+
+
+def services(request):
+    model = Service
+    form = Client_Form
+    services = Service.objects.all()
+    context = {'form': form, 'services': services}
+    template_name = 'services.html'
     return render(request, template_name, context)
