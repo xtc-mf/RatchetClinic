@@ -23,3 +23,12 @@ class Rewiew_Form(ModelForm):
         model = Review
         fields = ['review_name', 'reviwe_rate', 'reviwe_text']
         labels = {'review_name': 'Ваше имя', 'reviwe_rate': 'Ваша оценка', 'reviwe_text': 'Ваш отзыв'}
+
+class Client_Form(ModelForm):
+    class Meta:
+        model = Client
+        fields = ['client_name', 'client_surname', 'client_notes', 'client_phone', 'client_date', 'client_service']
+        widgets = {
+            'client_notes': forms.Textarea(attrs={'rows': 3}),
+            'client_date': forms.DateInput(attrs={'type': 'date'}),
+        }
