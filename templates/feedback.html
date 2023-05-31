@@ -8,7 +8,8 @@
   <title>Обратная связь - RATCHET Clinic</title>
   <link rel="stylesheet" href="{% static 'css/feedback.css' %}">
 </head>
-<body>
+<body style="background-image: url({% static 'Assets/feedback-back.jpg' %}); background-repeat: no-repeat;
+  background-position: center center; background-attachment: fixed; background-size: cover; ">
 
   <header>
     <div class="logo">
@@ -17,19 +18,18 @@
     </div>
     <nav>
       <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="doctors.html">Доктора</a></li>
-        <li><a href="feedback.html">Контакты</a></li>
+        <li><a href="{% url 'index' %}">Главная</a></li>
+        <li><a href="{% url 'doctors' %}">Доктора</a></li>
+        <li><a href="{% url 'review' %}">Отзывы</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-
     <section class="section-feedback" style="margin-top: 150px;">
       <h2 style="text-align: center">Обратная связь</h2>
             <div class="div-feedback">
-                <form action="{% url 'feedback' %}" method="POST">
+                <form action="{% url 'index' %}" method="POST">
                 {% csrf_token %}
                 <label>Имя:</label>
                 {{ form.feedback_name }}
@@ -44,9 +44,9 @@
   <footer>
     <div class="footer-links">
       <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="doctors.html">Доктора</a></li>
-        <li><a href="feedback.html">Контакты</a></li>
+        <li><a href="{% url 'index' %}">Главная</a></li>
+        <li><a href="{% url 'doctors' %}">Доктора</a></li>
+        <li><a href="{% url 'review' %}">Отзывы</a></li>
       </ul>
     </div>
     <div class="footer-contacts">
