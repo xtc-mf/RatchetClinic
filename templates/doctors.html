@@ -1,61 +1,70 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Врачи - Частная поликлиника</title>
-  <link rel="stylesheet" href="doctors.css">
+  <link rel="stylesheet" href="{% static 'css/doctors.css' %}">
 </head>
 <body>
   <header>
-    <h1>Частная поликлиника</h1>
+    <div class="logo">
+      <img src="{% static 'Assets/gerb-kbp-full-1000x1000-1.png' %}" alt="Логотип поликлиники">
+      <h1>RATCHET Clinic</h1>
+    </div>
     <nav>
       <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="services.html">Услуги</a></li>
-        <li><a href="doctors.html">Врачи</a></li>
-        <li><a href="feedback.html">Контакты</a></li>
+        <li><a href="{% url 'index' %}">Главная</a></li>
+        <li><a href="{% url 'feedback' %}">Обратная связь</a></li>
+        <li><a href="{% url 'review' %}">Отзывы</a></li>
       </ul>
     </nav>
   </header>
-
   <main>
     <section>
-      <h2>Врачи</h2>
-      <div class="doctor-card">
-        <img src="Assets/ratchet-reverse.png" alt="Доктор Иванова">
-        <h3>Доктор Иванова</h3>
-        <p>Терапевт</p>
-        <p>Стаж работы: 10 лет</p>
+      <h1 style="margin-top: 200px; color: black">Наш персонал</h1>
+        {% for obj in employees %}
+      <div class="department">
+      <div class="doctor-img">
+        <img src="{{ obj.employee_photo.url }}" alt="Фото врача" align="center">
       </div>
-
-      <div class="doctor-card">
-        <img src="Assets/ratchet-reverse.png" alt="Доктор Петрова">
-        <h3>Доктор Петрова</h3>
-        <p>Педиатр</p>
-        <p>Стаж работы: 8 лет</p>
+      <div class="doctor-info">
+        <h3>{{ obj.employee_full_name }}</h3>
+        <p>{{ obj.employee_specialization }}<br>Возраст: {{ obj.employee_age }}<br>Опыт работы: {{ obj.employee_experience }}<br> {{ obj.employee_discription }}</p>
       </div>
-
-      <div class="doctor-card">
-        <img src="Assets/ratchet-reverse.png" alt="Доктор Сидорова">
-        <h3>Доктор Сидорова</h3>
-        <p>Гинеколог</p>
-        <p>Стаж работы: 12 лет</p>
-      </div>
-
-         {% for employee in employees %}  <!-- Обновленное имя переменной -->
-        <p>{{ obj.employee_full_name }}</p>
-        <p>{{ obj.employee_age }}</p>
-        <p>{{ obj.employee_specialization }}</p>
-        <p>{{ obj.employee_experience }}</p>
-        <img src="{{ obj.employee_photo.url }}" alt="Фото врача">
-    {% endfor %}
-      <!-- Добавьте остальных врачей по аналогии -->
+      <div class="separator"></div>
+    </div>
     </section>
+      {% endfor %}
   </main>
+  <footer style="margin-top: 200px">
+    <div class="footer-links">
+      <ul>
+        <li><a href="{% url 'index' %}">Главная</a></li>
+        <li><a href="{% url 'feedback' %}">Обратная связь</a></li>
+        <li><a href="{% url 'review' %}">Отзывы</a></li>
+      </ul>
+    </div>
+    <div class="footer-contacts">
+      <div class="contact-info">
+        <i class="fa fa-map-marker"></i>
+        <p>Адрес: <b>ул. Колесникова 3, г. Минск</b></p>
+      </div>
+      <div class="contact-info">
+        <i class="fa fa-phone"></i>
+        <p>Телефон: +375447776429</p>
 
-  <footer>
-    <p>© 2023 Частная поликлиника. Все права защищены.</p>
+      </div>
+      <div class="contact-info">
+        <i class="fa fa-envelope"></i>
+        <p>Email: office@kbp.by</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 RATCHET Clinic. Все права защищены.</p>
+    </div>
   </footer>
 </body>
 </html>

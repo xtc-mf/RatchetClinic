@@ -1,15 +1,63 @@
-/* styles.css */
-
-/* Общие стили */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  h1, h2, h3 {
-    color: #333;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+header {
+  background-color: #8B0000;
+  color: #FFFFFF;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99999
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff5a5f;
+}
   
   a {
     color: #007bff;
@@ -19,45 +67,74 @@ body {
   a:hover {
     text-decoration: underline;
   }
-  
-  /* Шапка */
-  header {
-    background-color: #007bff;
-    color: #fff;
-    padding: 20px;
-  }
-  
-  header h1 {
-    margin: 0;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  nav ul li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  nav ul li:last-child {
-    margin-right: 0;
-  }
-  
-  /* Основное содержимое */
-  main {
-    padding: 20px;
-  }
-  
-  section {
-    margin-bottom: 20px;
-  }
-  
-  section h2 {
-    margin-top: 0;
-  }
+
+.department {
+  position: relative;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center; /* Добавлено для центрирования содержимого */
+}
+
+.department .doctor-img {
+  position: relative;
+  width: 20%; /* Изменено на 35% */
+  height: 20%;
+  margin: 0 auto; /* Добавлено для центрирования */
+  margin-bottom: 10px;
+  overflow: hidden; /* Добавлено для обрезки изображения */
+}
+
+.department .doctor-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 220px;
+  transition: transform 0.3s ease; /* Добавлено для плавного перехода */
+}
+
+.department .doctor-img img:hover {
+  transform: scale(1.5); /* Изменено на более большой масштаб при наведении */
+}
+
+.department .doctor-info {
+  text-align: center;
+  color: #333;
+}
+
+.department .doctor-info h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.department .doctor-info p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.department h3 {
+  color: #333;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.department p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.department:last-child {
+  margin-bottom: 0;
+}
+
+.separator {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-top: 1px solid #ccc;
+}
   
   .doctor-card {
     display: flex;
@@ -76,11 +153,129 @@ body {
   }
   
   /* Подвал */
-  footer {
-    background-color: #f5f5f5;
-    color: #333;
-    padding: 10px;
-    text-align: center;
-    font-size: 14px;
-  }
+footer {
+  background-color: #8B0000;
+  color: #fff;
+  padding: 40px;
+  text-align: center;
+}
+
+.footer-links ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #ff5a5f;
+}
+
+.contact-info {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: #ff5a5f;
+}
+
+.footer-social {
+  margin-top: 20px;
+}
+
+.footer-social p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #ff5a5f;
+}
+
+.social-media a {
+  color: #fff;
+  margin-right: 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #ff5a5f;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  font-size: 12px;
+  color: #999;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom a {
+  color: #999;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #ff5a5f;
+}
+
+.footer-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 20px 0;
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.footer-info {
+  font-size: 14px;
+  color: #ff5a5f;
+}
+
+.footer-info p {
+  margin-bottom: 10px;
+}
+
+.footer-info span {
+  font-weight: bold;
+}
+
+.footer-copyright {
+  margin-top: 40px;
+  font-size: 12px;
+  color: #999;
+}
+
+.social-media a {
+  color: #FFFFFF;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.fa {
+  font-size: 20px;
+  margin-right: 5px;
+}
   
