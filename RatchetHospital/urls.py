@@ -27,5 +27,6 @@ urlpatterns = [
     path('', Ratchet.views.index, name='index'),
     path('feedback/', Ratchet.views.feedback, name='feedback'),
     path('review/', Ratchet.views.review, name='review'),
-    path('doctors/', Ratchet.views.doctors, name='doctors')
+    path('doctors/', Ratchet.views.doctors, name='doctors'),
+    path('services/', Ratchet.views.services, name='services')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
