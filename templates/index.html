@@ -17,13 +17,13 @@
     </div>
     <nav>
       <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="doctors.html">Доктора</a></li>
-        <li><a href="feedback.html">Контакты</a></li>
+        <li><a href="{% url 'index' %}">Главная</a></li>
+        <li><a href="{% url 'doctors' %}">Доктора</a></li>
+        <li><a href="{% url 'review' %}">Отзывы</a></li>
       </ul>
     </nav>
   </header>
-  
+  <main>
   <div class="content">
     <div class="about-us">
       <div class="about-us-text">
@@ -46,7 +46,6 @@
         </div>
       </div>
     </div>
-
     <div class="slideshow-container">
       <div class="slide">
         <img src="https://images.pexels.com/photos/247786/pexels-photo-247786.jpeg?cs=srgb&dl=pexels-pixabay-247786.jpg&fm=jpg" alt="Слайд 1">
@@ -64,14 +63,8 @@
         <img src="https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?cs=srgb&dl=pexels-pixabay-263402.jpg&fm=jpg" alt="Слайд 5">
       </div>
     </div>
-    
     <h1 style="color: black">Наша гордость</h1>
     {% for obj in employees %}
-    <p></p>
-    <p></p>
-    <p></p>
-
-
     <div class="department">
       <div class="doctor-img">
         <img src="{{ obj.employee_photo.url }}" alt="Фото врача" align="center">
@@ -83,9 +76,6 @@
       <div class="separator"></div>
     </div>
 {% endfor %}
-    
-  
-
   </div>
   <div class="button-container">
     <div class="description">
@@ -94,30 +84,25 @@
       <br><a href="{% url 'feedback' %}" class="appointment-button">Записаться</a>
     </div>
   </div>
-    
     <div class="media" align="center">
       <h1 style="color: black;">Видео о нашей поликлинике</h1>
       <iframe width="55%" height="320px" src="https://www.youtube.com/embed/wQ2TN_gI3sE" title="YouTube video player" 
       frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
       allowfullscreen></iframe>
     </div>
-    
-
-    
     <div class="map">
       <h1 style="color: black">Где мы находимся?</h1>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2508.3295390184735!2d27.436184571846244!3d53.91710196563247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbce2d2dc47867%3A0xfb99f31aabb006f!2z0JrQvtC70LvQtdC00LYg0LHQuNC30L3QtdGB0LAg0Lgg0L_RgNCw0LLQsA!5e0!3m2!1sru!2sby!4v1684836120652!5m2!1sru!2sby"
       width="100%" height="200" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
     </div>
-    
   </div>
-  
+  </main>
   <footer>
     <div class="footer-links">
       <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="doctors.html">Доктора</a></li>
-        <li><a href="feedback.html">Контакты</a></li>
+        <li><a href="{% url 'index' %}">Главная</a></li>
+        <li><a href="{% url 'doctors' %}">Доктора</a></li>
+        <li><a href="{% url 'review' %}">Отзывы</a></li>
       </ul>
     </div>
     <div class="footer-contacts">
