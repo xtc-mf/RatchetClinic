@@ -1,0 +1,143 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RATCHET clinic</title>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="{% static 'Assets/gerb-kbp-full-1000x1000-1.png' %}" alt="Логотип поликлиники">
+      <h1>RATCHET Clinic</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="doctors.html">Доктора</a></li>
+        <li><a href="feedback.html">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="content">
+    <div class="about-us">
+      <div class="about-us-text">
+        <div style="background-color: #333; width: 100%; height: auto;">
+          <h1 style="margin-top: 105px; margin-top: 50px; margin-bottom: 50px;">Миссия нашей поликлиники заключается в предоставлении высококачественных медицинских услуг и заботе о здоровье наших пациентов. Мы стремимся стать надежным и доверенным местом, где каждый может получить профессиональное лечение и поддержку.</h1>
+        </div>
+        <div>
+          <h1 style="margin-top: 100px; color: black;">Почему именно мы?</h1>
+            <div style="background-color:#333; width: 100%; height: 265px ">
+                <ul>
+                    <b>
+                        <li>Качество и безопасность: Мы делаем все возможное для обеспечения безопасности и качества предоставляемых услуг. Наш медицинский персонал проходит регулярное обучение и следит за соблюдением всех стандартов качества.</li>
+                        <li>Пациентоориентированность: Мы ставим потребности и комфорт пациентов на первое место. Наша команда всегда готова выслушать и помочь каждому пациенту во время визита в нашу поликлинику.</li>
+                        <li>Инновации и развитие: Мы постоянно следим за новейшими технологиями и методами лечения, чтобы предоставлять нашим пациентам передовые медицинские услуги. Мы активно внедряем инновации и стремимся к постоянному развитию.</li>
+                        <li>Сотрудничество и командная работа: Мы ценим коллективную работу и сотрудничество между врачами, медсестрами и другими специалистами. Мы верим, что только вместе мы можем достичь наилучших результатов в лечении и уходе за пациентами.</li>
+                    </b>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slideshow-container">
+      <div class="slide">
+        <img src="https://images.pexels.com/photos/247786/pexels-photo-247786.jpeg?cs=srgb&dl=pexels-pixabay-247786.jpg&fm=jpg" alt="Слайд 1">
+      </div>
+      <div class="slide">
+        <img src="https://images.pexels.com/photos/1692693/pexels-photo-1692693.jpeg?cs=srgb&dl=pexels-tom-fisk-1692693.jpg&fm=jpg" alt="Слайд 2">
+      </div>
+      <div class="slide">
+        <img src="https://www.comunidad.madrid/sites/default/files/img/personalidades/diaz_ayuso_inaugura_el_hospital_enfermera_isabel_zendal.jpeg" alt="Слайд 3">
+      </div>
+      <div class="slide">
+        <img src="https://images.pexels.com/photos/1250655/pexels-photo-1250655.jpeg?cs=srgb&dl=pexels-vidal-balielo-jr-1250655.jpg&fm=jpg" alt="Слайд 4">
+      </div>
+      <div class="slide">
+        <img src="https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?cs=srgb&dl=pexels-pixabay-263402.jpg&fm=jpg" alt="Слайд 5">
+      </div>
+    </div>
+    
+    <h1 style="color: black">Наша гордость</h1>
+    {% for obj in employees %}
+    <p></p>
+    <p></p>
+    <p></p>
+
+
+    <div class="department">
+      <div class="doctor-img">
+        <img src="{{ obj.employee_photo.url }}" alt="Фото врача" align="center">
+      </div>
+      <div class="doctor-info">
+        <h3>{{ obj.employee_full_name }}</h3>
+        <p>{{ obj.employee_specialization }}<br>Возраст: {{ obj.employee_age }}<br>Опыт работы: {{ obj.employee_experience }}<br> {{ obj.employee_discription }}</p>
+      </div>
+      <div class="separator"></div>
+    </div>
+{% endfor %}
+    
+  
+
+  </div>
+  <div class="button-container">
+    <div class="description">
+      <h3>Есть вопросы?</h3>
+      <p>Здесь вы можете заполнить форму и мы обязательно ответим на них.</p>
+      <br><a href="{% url 'feedback' %}" class="appointment-button">Записаться</a>
+    </div>
+  </div>
+    
+    <div class="media" align="center">
+      <h1 style="color: black;">Видео о нашей поликлинике</h1>
+      <iframe width="55%" height="320px" src="https://www.youtube.com/embed/wQ2TN_gI3sE" title="YouTube video player" 
+      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen></iframe>
+    </div>
+    
+
+    
+    <div class="map">
+      <h1 style="color: black">Где мы находимся?</h1>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2508.3295390184735!2d27.436184571846244!3d53.91710196563247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbce2d2dc47867%3A0xfb99f31aabb006f!2z0JrQvtC70LvQtdC00LYg0LHQuNC30L3QtdGB0LAg0Lgg0L_RgNCw0LLQsA!5e0!3m2!1sru!2sby!4v1684836120652!5m2!1sru!2sby"
+      width="100%" height="200" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+    
+  </div>
+  
+  <footer>
+    <div class="footer-links">
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="doctors.html">Доктора</a></li>
+        <li><a href="feedback.html">Контакты</a></li>
+      </ul>
+    </div>
+    <div class="footer-contacts">
+      <div class="contact-info">
+        <i class="fa fa-map-marker"></i>
+        <p>Адрес: <b>ул. Колесникова 3, г. Минск</b></p>
+      </div>
+      <div class="contact-info">
+        <i class="fa fa-phone"></i>
+        <p>Телефон: +375447776429</p>
+        
+      </div>
+      <div class="contact-info">
+        <i class="fa fa-envelope"></i>
+        <p>Email: office@kbp.by</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 RATCHET Clinic. Все права защищены.</p>
+    </div>
+  </footer>
+</body>
+</html>

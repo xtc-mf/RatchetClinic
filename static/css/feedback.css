@@ -1,0 +1,550 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;  
+}
+.about-container {
+  padding: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.about-container h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.about-container p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.about-us {
+  padding: 50px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.about-us img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.about-us-text {
+  flex: 1;
+}
+
+.about-us-text h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about-us-text p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.about-us-text ul {
+  text-align: left;
+  margin-left: 40px;
+  list-style-type: none; /* Удаляем стандартные маркеры списка */
+  padding-left: 0; /* Удаляем отступ слева для списка */
+}
+
+.about-us-text ul li {
+  font-size: 18px;
+  line-height: 1.6;
+  color: red;
+  margin-bottom: 10px;
+  padding-left: 30px; /* Добавляем отступ слева для каждого элемента списка */
+}
+
+.about-us-text ul li:before {
+  content: "✚"; /* Замените на желаемый символ маркера */
+  margin-right: 10px;
+}
+
+.about-us-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.about-us-text a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .about-us {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-us img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Стили для хедера */
+
+header {
+  background-color: #8B0000;
+  color: #FFFFFF;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99999
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff5a5f;
+}
+
+/* Стили для контента */
+
+.content {
+  margin-top: 80px;
+}
+
+h2 {
+  color: #333333;
+  margin-top: 30px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.department {
+  position: relative;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center; /* Добавлено для центрирования содержимого */
+}
+
+.department .doctor-img {
+  position: relative;
+  width: 20%; /* Изменено на 35% */
+  height: 20%;
+  margin: 0 auto; /* Добавлено для центрирования */
+  margin-bottom: 10px;
+  overflow: hidden; /* Добавлено для обрезки изображения */
+}
+
+.department .doctor-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 220px;
+  transition: transform 0.3s ease; /* Добавлено для плавного перехода */
+}
+
+.department .doctor-img img:hover {
+  transform: scale(1.5); /* Изменено на более большой масштаб при наведении */
+}
+
+.department .doctor-info {
+  text-align: center;
+  color: #333;
+}
+
+.department .doctor-info h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.department .doctor-info p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.department h3 {
+  color: #333;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.department p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.department:last-child {
+  margin-bottom: 0;
+}
+
+.separator {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.description h3 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.description p {
+  color: #fff;
+  font-size: 14px;
+  margin: 0;
+}
+
+.appointment-button {
+  background-color: #8B0000;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.appointment-button:hover
+{
+  background-color: white;
+  color: black;
+  transform: scale(1.1);
+}
+
+
+.media {
+  margin-top: 30px;
+}
+
+video {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+.map {
+  margin-top: 30px;
+}
+
+footer {
+  background-color: #8B0000;
+  color: #fff;
+  padding: 40px;
+  text-align: center;
+}
+
+.footer-links ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #ff5a5f;
+}
+
+.contact-info {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: #ff5a5f;
+}
+
+.footer-social {
+  margin-top: 20px;
+}
+
+.footer-social p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #ff5a5f;
+}
+
+.social-media a {
+  color: #fff;
+  margin-right: 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #ff5a5f;
+}
+
+footer {
+  padding: 20px 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  font-size: 12px;
+  color: #999;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom a {
+  color: #999;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #ff5a5f;
+}
+
+.footer-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 20px 0;
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.footer-info {
+  font-size: 14px;
+  color: #ff5a5f;
+}
+
+.footer-info p {
+  margin-bottom: 10px;
+}
+
+.footer-info span {
+  font-weight: bold;
+}
+
+.footer-copyright {
+  margin-top: 40px;
+  font-size: 12px;
+  color: #999;
+}
+
+.social-media a {
+  color: #FFFFFF;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.fa {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 70%;
+  height: 550px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+@keyframes slideAnimation {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  33% { opacity: 1; }
+  53% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.slideshow-container .slide:nth-child(1) {
+  animation: slideAnimation 5s infinite;
+}
+
+.slideshow-container .slide:nth-child(2) {
+  animation: slideAnimation 5s infinite 1s;
+}
+
+.slideshow-container .slide:nth-child(3) {
+  animation: slideAnimation 5s infinite 2s;
+}
+
+.slideshow-container .slide:nth-child(4) {
+  animation: slideAnimation 5s infinite 3s;
+}
+
+.slideshow-container .slide:nth-child(5) {
+  animation: slideAnimation 5s infinite 4s;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="tel"] {
+  margin-top: 5px;
+  padding: 5px;
+  width: 200px;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #FF0000;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #990000;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+
+.div-feedback
+{
+  width: 300px;
+  border-radius: 20px;
+  background-color: #cccccc;
+
+}
+
+.div-feedback:hover
+{
+  background-color: #b0b0b0;
+  transition: 0.2s all;
+}
+
+.section-feedback
+{
+  margin: auto;
+  right: 50%;
+  left: 50%;
+  width: 300px;
+}
