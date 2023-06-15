@@ -18,11 +18,14 @@ def feedback(request):
             form.save()
         else:
             messages.error(request, 'Ошибка заполнения формы!')
-    return render(request, 'feedback.html', {'form': Feedback_Form})
+    else:
+        form = Feedback_Form()  # Создайте пустой экземпляр формы для передачи в контекст
+    return render(request, 'feedback.html', {'form': form})
+
 
 
 def review(request):
-    review_model = Review.objects.all()
+    review_model = Review.objects.all().reverse()
     average_rating = round(calculate_average_rate(), 1)
     if request.method == "POST":
         form = Rewiew_Form(request.POST)
@@ -45,8 +48,14 @@ def doctors(request):
 
 
 def services(request):
-    model = Service
-    form = Client_Form
+    if request.method == 'POST':
+        form = Client_Form(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('services')  # Перенаправление после успешного сохранения формы
+    else:
+        form = Client_Form()
+
     services = Service.objects.all()
     context = {'form': form, 'services': services}
     template_name = 'services.html'

@@ -86,6 +86,7 @@ class Client(models.Model):
     def clean(self):
         if self.client_date < timezone.now().date():
             raise ValidationError("Нельзя записаться на прошедшую дату")
+
     class Meta:
         verbose_name = 'Клиент'
         verbose_name_plural = 'Клиенты'
