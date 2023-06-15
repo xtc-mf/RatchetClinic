@@ -3,6 +3,16 @@ body {
   margin: 0;
   padding: 0;
 }
+audio {
+   width: 100%; /* Задайте ширину по вашему желанию */
+  height: 30px; /* Задайте высоту по вашему желанию */
+  border: 1px solid #ccc; /* Задайте стиль рамки по вашему желанию */
+  border-radius: 5px; /* Задайте скругление углов по вашему желанию */
+  background-color: #f2f2f2; /* Задайте цвет фона по вашему желанию */
+  padding: 10px; /* Задайте отступы по вашему желанию */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Задайт */
+}
+
 h1 {
   font-size: 36px;
   font-weight: bold;
