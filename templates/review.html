@@ -24,20 +24,9 @@
       </ul>
     </nav>
   </header>
-    <div class="container" style="margin-top: 100px;">
-        <h1 style="color: black">Наш рейтинг: {{ average_rating }} :P</h1>
-        <div class="reviews-container">
-            {% for obj in review_model %}
-            <div class="review">
-                <p>Пользователь: <b>{{ obj.review_name }}</b></p>
-                <p>Оценка: <b style="color: orange">{{ obj.reviwe_rate }}</b></p>
-                <p><b><br>{{ obj.reviwe_text }}</b></p>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
+      <audio src="{% static 'audio/music.mp3' %}" style="margin-top: 150px" controls></audio>
 
-        <form action="{% url 'review' %}" method="POST" style="margin-top: 100px">
+    <form action="{% url 'review' %}" method="POST" style="margin-top: 200px">
             {% csrf_token %}
             <div class="form-container">
                 <h1 style="color: black">Оставьте отзыв</h1>
@@ -56,6 +45,18 @@
                 <button type="submit">Отправить</button>
             </div>
         </form>
+    <div class="container" style="margin-top: 100px;">
+        <h1 style="color: black">Наш рейтинг: {{ average_rating }} :P</h1>
+        <div class="reviews-container">
+            {% for obj in review_model %}
+            <div class="review">
+                <p>Пользователь: <b>{{ obj.review_name }}</b></p>
+                <p>Оценка: <b style="color: orange">{{ obj.reviwe_rate }}</b></p>
+                <p><b><br>{{ obj.reviwe_text }}</b></p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
     <footer style="margin-top: 100px">
     <div class="footer-links">
       <ul>
