@@ -27,20 +27,20 @@
   </header>
 
   <main>
+        <audio src="{% static 'audio/music.mp3' %}" style="margin-top: 150px" controls></audio>
     <section class="section-feedback" style="margin-top: 150px;">
-      <h1 style="text-align: center">Обратная связь</h1>
-            <div class="div-feedback">
-                <form action="{% url 'index' %}" method="POST">
+        <h1 style="text-align: center">Обратная связь</h1>
+        <div class="form-container">
+            <form action="{% url 'index' %}" method="POST">
                 {% csrf_token %}
-                <label>Имя:</label>
-                {{ form.feedback_name }}
-                <label>Мобильный телефон:</label>
-                {{ form.feedback_phone }}
+                {{ form  }}
+                <br><br>
                 <button type="submit">Отправить</button>
-                </form>
-            </div>
+            </form>
+        </div>
     </section>
-  </main>
+</main>
+
 
   <footer style="margin-top: 150px">
     <div class="footer-links">
